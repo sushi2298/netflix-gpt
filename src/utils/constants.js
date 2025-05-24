@@ -14,3 +14,9 @@ export const URL_OPTIONS = {
 };
 
 export const VIDEOS_URL = (id) => `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
+
+export const IMAGE_CDN = "https://image.tmdb.org/t/p/w500/";
+
+export const POPULAR_URL = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+
+export const TOP_RATED_URL = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";

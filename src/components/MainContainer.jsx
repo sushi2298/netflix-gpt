@@ -8,7 +8,7 @@ const MainContainer = () => {
 
     const { id, original_title, overview } = nowMovies[0];
 
-    return <div >
+    return <div>
         <VideoTitle title={original_title} overview={overview} />
         <VideoBackground movieId={id}/>
     </div>

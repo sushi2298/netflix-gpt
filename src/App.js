@@ -7,7 +7,7 @@ import Login from './components/Login';
 function App() {
 
   return (
-    <div>
+    <div className='w-full overflow-x-hidden'>
       <Provider store={appStore}>
         <BrowserRouter>
           <Routes>
