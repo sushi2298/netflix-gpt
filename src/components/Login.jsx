@@ -5,6 +5,7 @@ import { auth } from "../utils/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from "../utils/slices/userSlice";
+import { BCK_IMG } from "../utils/constants";
 
 const Login = () => {
     const [isSignIn, setSignIn] = useState(true);
@@ -29,7 +30,6 @@ const Login = () => {
         if(!isSignIn) {
             createUserWithEmailAndPassword(auth, email.current?.value, password.current?.value)
                 .then((userCredential) => {
-                    // Signed up 
                     const user = userCredential.user;
                     updateProfile(user, {
                         displayName: name.current?.value
@@ -48,12 +48,7 @@ const Login = () => {
                     setFormError(errCode + ": " + errMessage);
                 });   
         } else {
-            signInWithEmailAndPassword(auth, email.current?.value, password.current?.value)
-                .then((userCredential) => {
-                    // Signed in 
-                    const user = userCredential.user;
-                })
-                .catch((err) => {
+            signInWithEmailAndPassword(auth, email.current?.value, password.current?.value).catch((err) => {
                     const errCode = err.code;
                     const errMessage = err.message;
                     setFormError(errCode + ": " + errMessage);
@@ -66,7 +61,7 @@ const Login = () => {
             <Header />
             <div className="absolute">
                 <img
-                    src="https://assets.nflxext.com/ffe/siteui/vlv3/cb17c41d-6a67-4472-8b91-cca977e65276/web/IN-en-20250505-TRIFECTA-perspective_03ae1a85-5dcf-4d20-a8a6-1e61f7ef73cb_large.jpg"
+                    src={BCK_IMG}
                     alt="bg"
                 />
             </div>
