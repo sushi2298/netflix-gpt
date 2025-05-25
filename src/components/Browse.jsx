@@ -5,8 +5,12 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import usePopular from "../utils/customHooks/usePopular";
 import useTopRated from "../utils/customHooks/useTopRated";
+import Search from "./Search";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
+    const isOpen = useSelector(state => state.search?.isOpen);
+
     useNowPlaying();
     usePopular();
     useTopRated();
@@ -14,8 +18,10 @@ const Browse = () => {
     return (
         <div>
             <Header isLoggedIn />
-            <MainContainer />
-            <SecondaryContainer />
+            {isOpen ? <Search /> : <>
+                <MainContainer />
+                <SecondaryContainer />
+            </>}
         </div>
     )
 }
