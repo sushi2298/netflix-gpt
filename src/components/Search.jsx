@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import SearchBar from "./SearchBar";
 import Suggestions from "./Sugesstions";
 

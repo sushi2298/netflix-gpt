@@ -9,7 +9,7 @@ export const URL_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OWQwMDUxODc0NWI2NTQwMDdjMWFhMTlhNDBkMGQxMSIsIm5iZiI6MTc0NzkyNDM0MS42MTYsInN1YiI6IjY4MmYzNTc1ZDUzMWU0Yjk0MTY4NDg1MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zE2dQyAgUohohWmH7OCivKMuyB_wW70tLycXoeqGc0E'
+    Authorization: 'Bearer ' + process.env.REACT_APP_TMDB
   }
 };
 
@@ -20,6 +20,12 @@ export const IMAGE_CDN = "https://image.tmdb.org/t/p/w500/";
 export const POPULAR_URL = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
 
 export const TOP_RATED_URL = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+
+export const SEARCH_URL_KEY_WORD = (query) => `https://api.themoviedb.org/3/search/keyword?query=${query}`;
+
+export const SEARCH_URL_MOVIE = (query) => `https://api.themoviedb.org/3/search/movie?query=${query}`;
+
+export const POSTER_PATH = (id) => `https://api.themoviedb.org/3/movie/${id}`;
 
 export const languages = [
  { id: "kn", name: "Kannada"},

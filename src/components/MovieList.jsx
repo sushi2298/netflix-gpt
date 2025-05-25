@@ -6,9 +6,9 @@ const MovieList = (props) => {
     return (
         <div className="py-4">
             <h1 className="text-2xl pb-4 font-semibold text-white">{title}</h1>
-            <div className="flex overflow-x-scroll">
+            <div className="flex overflow-x-auto">
                 <div className="flex gap-2">
-                {movies?.map((movie) => <MovieCard movie={movie}/>)}
+                {movies?.map((movie, index) => movie.poster_path && <MovieCard key={movie + index} posterPath={movie.poster_path}/>)}
                 </div>
             </div>
         </div>
