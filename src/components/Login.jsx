@@ -63,13 +63,14 @@ const Login = () => {
                 <img
                     src={BCK_IMG}
                     alt="bg"
+                    className="h-screen w-screen object-cover"
                 />
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className="flex flex-col absolute bg-black w-3/12 mx-auto right-0 left-0 my-32 text-white gap-4 p-16 bg-opacity-75"
+                className="flex flex-col absolute bg-black w-[90%] md:w-3/12 mx-auto right-0 left-0 my-20 md:my-32 text-white gap-2 md:gap-4 p-8 md:p-16 bg-opacity-75"
             >
-                <h1 className="text-3xl font-bold pb-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
+                <h1 className="text-lg md:text-3xl font-bold pb-2 md:pb-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
                 {!isSignIn && 
                     <input
                         ref={name} 
@@ -84,8 +85,8 @@ const Login = () => {
                     type='password'
                     placeholder="Password" className="p-2 bg-inherit border-solid border-slate-500 rounded-md border" />
                 {error && <p className="text-red-600">{error}</p>}
-                <button className="bg-red-600 p-2 rounded-md font-bold" onClick={onSubmit}>{isSignIn ? "Sign In" : "Sign Up"}</button>
-                <p className="cursor-pointer pt-4" onClick={onSwitch}>{!isSignIn ? "Already a user? Login to Netflix" : "New User? Sign Up to Netflix"}</p>
+                <button className="bg-red-600 p-2 rounded-md font-semibold" onClick={onSubmit}>{isSignIn ? "Sign In" : "Sign Up"}</button>
+                <p className="cursor-pointer pt-2 md:pt-4" onClick={onSwitch}>{!isSignIn ? "Already a user? Login to Netflix" : "New User? Sign Up to Netflix"}</p>
             </form>
         </div>
     )

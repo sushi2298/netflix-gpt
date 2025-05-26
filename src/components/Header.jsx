@@ -46,38 +46,38 @@ const Header = ({ isLoggedIn }) => {
     }, []);
 
     return (
-        <div className="absolute bg-gradient-to-b from-black z-10 w-full flex justify-between">
+        <div className="absolute bg-gradient-to-b from-black z-10 w-full flex justify-between flex-row">
             <img
-                className="mx-8 w-48"
+                className="mx-0 w-28 md:mx-8 md:w-48 "
                 src={LOGO}
                 alt="logo"
             />
             {
                 isLoggedIn && (
-                    <div className="flex gap-4 m-4 justify-center items-center">
-                        <button 
-                            className="bg-slate-400 bg-opacity-25 text-white rounded-md p-4 hover:bg-opacity-15 font-semibold"
-                            onClick={handleSearchOpen}
-                        >
-                                Search
-                        </button>
-                        <img
-                            alt="userIcon"
-                            className="w-11 h-12"
-                            src={USER_AVATAR}
-                        />
-                        <button
-                            className="text-white font-bold"
-                            onClick={handleSignOut}
-                        >
-                            Sign out
-                        </button>
+                    <div className="flex gap-2 md:gap-4  md:m-4 justify-center items-center">
                         {
                             isSearchOpen &&
                             <select className="bg-slate-300 bg-opacity-20 text-white p-2" onChange={selectLanguage} value={currentLang}>
                                 {languages.map((lg) => <option key={lg.id} className="text-black" value={lg.id}> {lg.name}</option>)}
                             </select>
                         }
+                        <button 
+                            className="bg-slate-400 bg-opacity-25 text-white rounded-md p-2 md:p-4 hover:bg-opacity-15 font-semibold"
+                            onClick={handleSearchOpen}
+                        >
+                                Search
+                        </button>
+                        <img
+                            alt="userIcon"
+                            className="w-5 h-6 md:w-11 md:h-12"
+                            src={USER_AVATAR}
+                        />
+                        <button
+                            className="text-white font-semibold"
+                            onClick={handleSignOut}
+                        >
+                            Sign out
+                        </button>
                     </div>
                 )
             }

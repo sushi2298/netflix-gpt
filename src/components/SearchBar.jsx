@@ -35,22 +35,22 @@ const SearchBar = () => {
             <img
                 src={BCK_IMG}
                 alt="bg"
+                className="h-screen w-screen object-cover"
             />
         </div>
-        <form className="mt-[8%] bg-black w-1/2 grid grid-cols-12 rounded-lg" onSubmit={(e) => {e.preventDefault()}}>
+        <form className="mt-[25%] md:mt-[8%] bg-black w-full md:w-1/2 grid grid-cols-12 rounded-lg" onSubmit={(e) => {e.preventDefault()}}>
             <input 
                 placeholder={language[currentLang].searchText}
                 type="text"
-                className="p-4 m-2 col-span-10 rounded-md"
+                className="p-2 md:p-4 m-1 md:m-2 col-span-8 md:col-span-10 rounded-md"
                 ref={searchText}
             />
             <button
-                className="bg-slate-300 bg-opacity-25 p-2 m-2 rounded-md col-span-2 text-white hover:bg-opacity-20 font-semibold"
+                className="bg-slate-300 bg-opacity-25 p-1 md:p-2 m-1 md:m-2 rounded-md col-span-4 md:col-span-2 text-white hover:bg-opacity-20 font-semibold"
                 onClick={handleSearch}
             >
                 Search
             </button>
-
         </form>
     </div>
 };
